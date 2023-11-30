@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Search Results</title>
+    <style>
+        body {
+            <%= background_style %>
+            text-align: center;
+            padding: 50px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .song-box {
+            <%= song_box_background_color; %>
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .song-box img {
+            margin-right: 10px;
+            border-radius: 4px;
+            width: 60px;
+            height: 60px; 
+        }
+
+        .song-details {
+            flex: 1;
+            text-align: left;
+        }
+
+        .song-details h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .song-details p {
+            font-size: 16px;
+            color: #cccccc; 
+        }
+
+    </style>
+    </head>
+    <body>
+    <h2  style="color: #ffffff;" >Search Results</h2>
+    <% results.each do |result| %>
+        <div class="song-box">
+            <img src="<%= result.album.images.first['url'] %>" alt="<%= result.name %>">
+            <div class="song-details">
+                <h3 style="color: #ffffff;" ><%= result.name %></h3>
+                <p>by <%= result.artists.first.name %></p>
+            </div>
+        </div>
+    <% end %>
+    </body>
+</html>

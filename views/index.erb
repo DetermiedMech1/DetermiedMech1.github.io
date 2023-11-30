@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <style>
+            body {
+                <%= background_style %>
+                text-align: center;
+                padding: 100px;
+            }
+
+            input {
+                padding: 10px;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1  style="color: #ffffff;" >Spotify Song Search</h1>
+        <form action="/search" method="post">
+            <input type="text" name="search_query" placeholder="Search for a song...">
+            <input type="submit" value="Search">
+        </form>
+    </body>
+</html>
